@@ -1,0 +1,364 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    color: black;
+    font-family: 'Roboto Condensed', sans-serif;
+
+}
+
+:root{
+    --mainColor:rgb(58, 79, 211);
+    --btnAfterColor:rgba(58, 78, 211, 0.463);
+}
+
+
+/* Header Styles */
+#displayNavBTN{
+    display: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+}
+.transYZ{
+    transform: translateY(0) !important;
+    transition:all 0.3s;
+}
+header{
+    width: 80vw;
+    height: 70px;
+    margin: 15px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header #headerTitle{
+    color: var(--mainColor);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.links #hideNavBTN{
+    position: absolute;
+    top: 90%;
+    left: 45%;
+    color: red;
+    font-size: 2.2rem;
+    cursor: pointer;
+    display: none;
+}
+
+
+.nav .links{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.links li{
+    margin: 0 20px;
+    position: relative;
+}
+
+.links li:after{
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 2px;
+    background-color: var(--mainColor);
+    left: 0;
+    bottom: -5px;
+    transition:all 0.5s;
+}
+.links li:hover::after{
+    transition:all 0.5s;
+    width: 100%;
+}
+.links li .link{
+    color: rgb(122, 119, 119);
+    font-size: 1rem;
+    font-weight:600;
+    transition: all 0.3s;
+
+}
+
+header #headerBuyBTN{
+    outline: none;
+    background-color: var(--mainColor);
+    color: white;
+    padding:12px 15px;
+    border-radius: 7px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btnShadow{
+    box-shadow: 0 4px 5px 1px rgba(0, 0, 0, 0.357);
+
+}
+
+
+/* Main*/
+
+.main{
+    margin: 0 auto;
+    width: 80vw;
+    height: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.main #left{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 450px;
+    font-size: 1.7rem;
+}
+.main #left *{
+    margin: 22px 0;
+}
+
+#left h1 span{
+    color: var(--mainColor);
+}
+
+.main #left p{
+    text-align: justify;
+    color: gray;
+    font-size: 1.1rem;
+    width: 80%;
+}
+
+
+.main #left #mainLinks{
+
+}
+
+#mainLinks .btn{
+    border: 0px solid black;
+    padding: 12px 15px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    position: relative;
+}
+#mainLinks .btn::after{
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 10%;
+    border-radius: 5px;
+    bottom: 0;
+    left: 25%;
+    background-color: var(--btnAfterColor);
+    transition: all 0.3s;
+    opacity: 0;
+}
+#mainLinks .btn:hover::after{
+    bottom:-30%;
+    opacity: 1;
+    transition: all 0.3s;
+}
+#mainLinks #allPagesBTN{
+    background-color: var(--mainColor);
+    color: white;
+    text-align: center;
+    justify-content: space-evenly;
+}
+
+#allPagesBTN i{
+    color: white;
+    font-size: 1rem;
+}
+
+#mainLinks #documentationBTN{
+    background-color: rgb(226, 223, 223);
+    color: var(--mainColor);
+    font-weight: bold;
+    
+}
+
+
+.main #right{
+
+}
+
+
+.main #right img{
+    width: 500px;
+    height:400px;
+}
+
+.btnTransition{
+    transition: all 0.5s;
+}
+
+.btnTransition:hover{ 
+    margin-top: 5px !important;
+    transition: all 0.5s;
+}
+
+
+/*footer*/
+
+.footer {
+    margin: 0 auto;
+    width: 80vw;
+    height: 230px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.footer .item{
+    width: 280px;
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer .item *{
+    margin: 7px 0;
+}
+.footer .item i.bi-award-fill{
+    color: blue;
+}
+
+.footer .item .itemTitle{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.footer .item p{
+    color: gray;
+}
+
+/*-------------------Responsive Syles*/
+
+@media only screen and (max-width:660px) {
+    /*HEADER */
+    .links li:hover::after{
+        width: 0%;
+    }
+    .nav #hideNavBTN{
+        display: block;
+    }
+    #displayNavBTN{
+        display: block;
+    }
+    header{
+        width: 95vw;
+        margin:5px auto;
+    }
+    header .nav{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: black;
+        height:70px;
+        border-bottom-left-radius: 20px;
+        border-bottom-right-radius: 20px;
+        width: 100%;
+        transform: translateY(-150%);
+        transition: all 0.3s;
+        z-index: 1;
+    }
+    .nav .links{
+        height: 100%;
+        width: 100%;
+
+        align-items: center;
+        justify-content: space-evenly;
+    }
+
+    .nav .links li{
+        margin:0px !important;
+        width: 128px;
+        text-align: center;
+    }
+    .nav .links li:hover > a{
+        background-color: var(--mainColor);
+        padding: 5px;
+        color: white;
+        border-radius: 10px;
+        transition: all 0.3s;
+    }
+   
+    /*MAIN*/
+    .main {
+        margin: 50px auto;
+        width: 95vw;
+    }
+    .main #left{
+        font-size: 1.2rem;
+    }
+
+    
+    #mainLinks{
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+
+    #mainLinks .btn{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0 !important;
+        padding: 0 !important;
+        height: 40px;
+        width: 160px;
+        border-radius: 5px;
+        font-size: 1.2rem;
+    }
+    .main #right img{
+        width: 100%;
+        height:300px;
+    }
+
+    /*footer*/
+    .footer {
+    }
+   
+}
+   
+@media only screen and (max-width:1100px) {
+    /*main*/
+    .main{
+        flex-direction: column;
+        height: 100%;
+    } 
+    .main #left{
+        width: 100%;
+    }
+    #left #mainLinks{
+        align-self: center;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    #mainLinks .btn{
+        margin: 0 20px;
+    }
+
+    /*footer*/
+    .footer {
+            margin: 15px auto;
+            width: 80vw !important;
+            height: 100%;
+            flex-wrap: wrap;
+            align-items: flex-start;
+
+        }
+}
+@media only screen and (max-width:360px) {
+    #mainLinks .btn{
+        margin: 8px 0 !important;
+    }
+}
+
+/*-------------------End Responsive Syles*/
